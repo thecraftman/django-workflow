@@ -1,0 +1,19 @@
+version: "1"
+pipelines:
+  - name: pr-comments-pr-opened:0.1.0
+    description: pr comment pr opened
+    env:
+      static:
+        - DEBIAN_FRONTEND=noninteractive
+        - ORG=thecraftman
+        - REPO=sample-app
+        - REF=main
+    events:
+      - "github:thecraftman/sample-app:pull_request.opened"
+    jobs:
+      - name: pr-github-workflows-interaction-build
+        description: github pr workflows
+        packages:
+          - git
+        steps:
+          - echo "pull request opened"
