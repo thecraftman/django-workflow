@@ -5,5 +5,5 @@
 	'
 
     echo "django workflow"
-docker build -f Dockerfile -t .
+docker build -t myproject .
     
