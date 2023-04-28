@@ -1,19 +1,23 @@
 version: "1"
 pipelines:
-  - name: pr-comments-pr-opened:0.1.0
-    description: pr comment pr opened
+  - name: django-workflow:0.1.0
+    description: django-workflow
     env:
       static:
         - DEBIAN_FRONTEND=noninteractive
         - ORG=thecraftman
-        - REPO=sample-app
+        - REPO=django-workflow
         - REF=main
     events:
-      - "github:thecraftman/sample-app:pull_request.opened"
+      - "github:thecraftman/django-workflow:pull_request.opened"
+      - "github:thecraftman/django-workflow:pull_request.merged"
     jobs:
-      - name: pr-github-workflows-interaction-build
-        description: github pr workflows
+      - name: django-workflow-build
+        description: django workflow
         packages:
           - git
         steps:
-          - echo "pull request opened"
+          - echo "django workflow"
+          - pytho3 -m pip install --upgrade pip
+          - pip install -r requirements.txt
+          - python3 manage.py test
