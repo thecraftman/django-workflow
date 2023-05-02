@@ -1,6 +1,6 @@
 version: "1"
 pipelines:
-  - name: django-workflow:0.1.5
+  - name: django-workflow:0.1.6
     description: django-workflow
     env:
       static:
