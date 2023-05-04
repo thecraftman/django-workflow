@@ -1,2 +1,3 @@
 # django-workflow
-Build Django CI/CD
+
+Build Django CI/CD applications and run workflows
