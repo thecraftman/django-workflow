@@ -9,7 +9,6 @@ pipelines:
         - REPO=django-workflow
         - REF=main
     events:
-      - "github:thecraftman/django-workflow:pull_request.opened"
       - "github:thecraftman/django-workflow:pull_request.merged"
     jobs:
       - name: django-workflow-build
@@ -18,8 +17,3 @@ pipelines:
           - git
         steps:
           - echo "django workflow"
-          # - curl -O https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz
-          # - python3 -m pip install --upgrade pip
-          # - pip install -r requirements.txt
-          # - python3 manage.py test
-          # - docker build -t myproject .
