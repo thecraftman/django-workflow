@@ -9,7 +9,7 @@ pipelines:
         - REPO=django-workflow
         - REF=main
     events:
-      - "github:thecraftman/django-workflow:pull_request.opened"
+      - "github:thecraftman/django-workflow:pull_request.merged"
     jobs:
       - name: django-workflow-build
         description: django workflow
@@ -17,4 +17,3 @@ pipelines:
           - git
         steps:
           - echo "django workflow"
-          
